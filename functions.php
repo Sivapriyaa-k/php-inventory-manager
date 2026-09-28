@@ -20,7 +20,7 @@ function searchProduct($products, $searchName)
         if ($product["name"] === $searchName) {
 
             echo "Name: " . $product["name"] . "<br>";
-            echo "Price: ₹" . $product["price"] . "<br>";
+            echo "Price: ₹ " . $product["price"] . "<br>";
             echo "Stock: " . $product["stock"] . "<br>";
             echo "Status: " . getStockStatus($product["stock"]) . "<br>";
 
@@ -39,7 +39,7 @@ function filterByCategory($products, $category)
     foreach ($products as $product) {
 
         if ($product["category"] === $category) {
-            echo $product["name"] . " - ₹" . $product["price"] . "<br>";
+            echo $product["name"] . " - ₹ " . $product["price"] . "<br>";
         }
     }
 }
