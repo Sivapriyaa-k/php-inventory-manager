@@ -15,9 +15,9 @@ function getStockStatus($stock)
 function searchProduct($products, $searchName)
 {
     $found = false;
-
     foreach ($products as $product) {
-        if ($product["name"] === $searchName) {
+        $name = strtolower($product["name"]);
+        if (strpos($name,strtolower($searchName)) !== false) {
 
             echo "Name: " . $product["name"] . "<br>";
             echo "Price: ₹ " . $product["price"] . "<br>";
@@ -25,6 +25,7 @@ function searchProduct($products, $searchName)
             echo "Status: " . getStockStatus($product["stock"]) . "<br>";
 
             $found = true;
+            return ;
         }
     }
 
@@ -72,16 +73,21 @@ function getCategoryValue($products, $category)
 }
 
 
-function validateProduct($product)
+function validateProduct($products)
 {
-    if (
-        empty($product["name"]) ||
-        $product["price"] <= 0 ||
-        $product["stock"] < 0 ||
-        empty($product["category"])
-    ) {
-        return false;
-    }
+    $valid =true;
+    foreach($products as $product){
+        if (
+                empty($product["name"]) ||
+                $product["price"] <= 0 ||
+                $product["stock"] < 0 ||
+                empty($product["category"])
+            ) {
+                echo $product["name"] ." is invalid <br>";
+                $valid= false;
+            }
 
-    return true;
+    }
+    
+    return $valid;
 }
