@@ -17,7 +17,8 @@ function searchProduct($products, $searchName)
     $found = false;
     foreach ($products as $product) {
         $name = strtolower($product["name"]);
-        if (strpos($name,strtolower($searchName)) !== false) {
+        $searchName = strtolower($searchName);
+        if (strpos($name,$searchName) !== false) {
 
             echo "Name: " . $product["name"] . "<br>";
             echo "Price: ₹ " . $product["price"] . "<br>";
