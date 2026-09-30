@@ -105,3 +105,24 @@ function sortByPrice($products,$order="asc"){
 
     return $products;
 }
+
+function getAveragePrice($products){
+    $sum=0;
+    $count = 0; 
+    foreach ($products as $product){
+        $sum +=$product["price"];
+        $count++;
+    }
+
+    return $sum/$count;
+}
+
+function getTotalInventoryValue($products){
+    $sum=0;
+    foreach($products as $product){
+        $sum+= ($product["price"] * $product["stock"]);
+    }
+
+    return $sum;
+}
+
