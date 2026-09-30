@@ -28,4 +28,13 @@ filterByCategory($products,"Electronics");
 
 echo "<h3>Expensive Product</h3>";
 
-echo getMostExpensiveProduct($products);
+$expensive = getMostExpensiveProduct($products);
+
+echo $expensive["name"] . "<br><br>";
+echo $expensive["price"];
+echo "<h3>Cheapest Product</h3>";
+
+$cheapProduct = getCheapestProduct($products);
+
+echo $cheapProduct["name"] . "<br><br>";
+echo $cheapProduct["price"];

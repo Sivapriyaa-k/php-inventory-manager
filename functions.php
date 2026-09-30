@@ -138,7 +138,20 @@ function getMostExpensiveProduct($products){
         }
 
     }
-    
-    return $expensiveProduct["name"];
 
+    return $expensiveProduct;
+
+}
+
+function getCheapestProduct($products){
+    $min = "";
+    $cheapestProduct = [];
+    foreach($products as $product){
+        if($min === "" || $min>$product["price"]){
+            $min=$product["price"];
+            $cheapestProduct = $product;
+        }
+    }
+
+    return $cheapestProduct;
 }
