@@ -25,3 +25,7 @@ echo "<form method='GET'>
 echo "<h3>Electronics Products</h3>";
 
 filterByCategory($products,"Electronics");
+
+echo "<h3>Expensive Product</h3>";
+
+echo getMostExpensiveProduct($products);

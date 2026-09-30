@@ -126,3 +126,19 @@ function getTotalInventoryValue($products){
     return $sum;
 }
 
+
+function getMostExpensiveProduct($products){
+    
+    $max=0;
+    $expensiveProduct = [];
+    foreach($products as $product){
+        if($max==0 || $max<$product["price"]){
+            $max = $product["price"];
+            $expensiveProduct = $product;
+        }
+
+    }
+    
+    return $expensiveProduct["name"];
+
+}
