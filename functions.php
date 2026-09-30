@@ -92,3 +92,16 @@ function validateProduct($products)
     
     return $valid;
 }
+
+
+function sortByPrice($products,$order="asc"){
+    usort($products,function ($a,$b) use($order){
+        if($order === "asc"){
+            return $a["price"] <=>$b["price"];
+        }
+
+        return $b["price"] <=> $a["price"];
+    });
+
+    return $products;
+}
