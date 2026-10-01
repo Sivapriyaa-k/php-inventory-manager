@@ -107,14 +107,15 @@ function sortByPrice($products,$order="asc"){
 }
 
 function getAveragePrice($products){
+    if(count($products) === 0){
+        return 0;
+    }
     $sum=0;
-    $count = 0; 
     foreach ($products as $product){
         $sum +=$product["price"];
-        $count++;
     }
 
-    return $sum/$count;
+    return $sum / count($count);
 }
 
 function getTotalInventoryValue($products){
@@ -154,4 +155,23 @@ function getCheapestProduct($products){
     }
 
     return $cheapestProduct;
+}
+
+function getProductsAbovePrice($products, $price){
+    $allProduct = [];
+    foreach($products as $product){
+        if($product["price"] > $price){
+            $allProduct[]= $product;
+        }
+    }
+    return $allProduct;
+}
+function getProductsBelowPrice($products, $price){
+    $allProduct = [];
+    foreach($products as $product){
+        if($product["price"] < $price){
+            $allProduct[]= $product;
+        }
+    }
+    return $allProduct;
 }
