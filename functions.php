@@ -166,6 +166,7 @@ function getProductsAbovePrice($products, $price){
     }
     return $allProduct;
 }
+
 function getProductsBelowPrice($products, $price){
     $allProduct = [];
     foreach($products as $product){
@@ -174,4 +175,16 @@ function getProductsBelowPrice($products, $price){
         }
     }
     return $allProduct;
+}
+
+function getProductById($products,$id){
+
+    foreach($products as $product){
+        if($product["id"] == $id){
+            return $product;
+        }
+    }
+
+    return null;
+
 }
