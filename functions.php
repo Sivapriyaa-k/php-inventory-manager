@@ -188,3 +188,7 @@ function getProductById($products,$id){
     return null;
 
 }
+
+function addProduct(){
+    
+}
