@@ -47,6 +47,6 @@ echo "<h3>Add Product</h3><br>
         <select id='category'>
             <option value='Stationery'>Stationery</option>
             <option value='Electronics'>Electronics</option>
-        </select><br><br>
+        </select><br>
         <button type='submit'>Add Product</button>
     </form>";
