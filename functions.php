@@ -189,6 +189,13 @@ function getProductById($products,$id){
 
 }
 
+if(isset($_POST['add_product'])){
+    addProduct();
+}
 function addProduct(){
-    
+    $name = $_POST['product_name'];
+    $price = $_POST['product_price'];
+    $stock = $_POST['product_stock'];
+    $category = $_POST['product_category'];
+
 }
