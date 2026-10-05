@@ -41,10 +41,10 @@ echo $cheapProduct["price"];
 
 echo "<h3>Add Product</h3><br>
     <form method='POST'>
-        <input type='text' placeholder='Enter Product Name' id='productName'><br>
-        <input type='number' placeholder='Enter Product Price' id='productPrice'><br>
-        <input type='number' placeholder='Enter Stock Quantity' id='productStock'><br>
-        <select id='category'>
+        <input type='text' placeholder='Enter Product Name' id='productName' name='product_name'><br>
+        <input type='number' placeholder='Enter Product Price' id='productPrice' name='product_price'><br>
+        <input type='number' placeholder='Enter Stock Quantity' id='productStock' name='product_stock'><br>
+        <select id='category' name='product_category'>
             <option value='Stationery'>Stationery</option>
             <option value='Electronics'>Electronics</option>
         </select><br>
